@@ -122,6 +122,11 @@
                             <i class="fas fa-calendar-check me-1"></i>Level Kamar
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('pasien*') ? 'active' : '' }}" href="{{ route('pasien.index') }}">
+                            <i class="fas fa-calendar-check me-1"></i>Pasien
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

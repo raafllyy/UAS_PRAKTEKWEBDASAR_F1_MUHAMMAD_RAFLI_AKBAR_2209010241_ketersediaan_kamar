@@ -28,7 +28,6 @@ class ReservasiController extends Controller
             'pasien_id' => 'required|exists:pasien,id',
             'kamar_id' => 'required|exists:kamar,id',
             'tanggal_masuk' => 'required|date',
-            'tanggal_keluar' => 'required|date|after:tanggal_masuk',
         ]);
 
         $reservasi = Reservasi::create($request->all());
@@ -57,7 +56,8 @@ class ReservasiController extends Controller
             'pasien_id' => 'required|exists:pasien,id',
             'kamar_id' => 'required|exists:kamar,id',
             'tanggal_masuk' => 'required|date',
-            'tanggal_keluar' => 'required|date|after:tanggal_masuk',
+            'tanggal_keluar' => 'nullable|date',
+            'tanggal_check_out' => 'nullable|date',
             'status' => 'required|in:aktif,selesai',
         ]);
 
@@ -83,4 +83,20 @@ class ReservasiController extends Controller
 
         return redirect()->route('reservasi.index')->with('success', 'Reservasi berhasil dihapus');
     }
+
+    public function checkOut(Reservasi $reservasi)
+    {
+        $reservasi->status = 'selesai';
+        $reservasi->tanggal_keluar= now();
+        $reservasi->save();
+
+        // Update status kamar menjadi tersedia
+        $kamar = $reservasi->kamar;
+        $kamar->status = 'tersedia';
+        $kamar->save();
+
+        return redirect()->route('reservasi.index')
+            ->with('success', 'Check-out berhasil.');
+    }
+    
 }

@@ -25,10 +25,6 @@
             <label for="tanggal_masuk">Tanggal Masuk</label>
             <input type="date" class="form-control" id="tanggal_masuk" name="tanggal_masuk" required>
         </div>
-        <div class="form-group">
-            <label for="tanggal_keluar">Tanggal Keluar</label>
-            <input type="date" class="form-control" id="tanggal_keluar" name="tanggal_keluar" required>
-        </div>
         <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
 </div>

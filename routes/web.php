@@ -17,3 +17,4 @@ Route::resource('pasien', PasienController::class);
 Route::resource('reservasi', ReservasiController::class);
 Route::get('/kamar/{kamar}/edit', [KamarController::class, 'edit'])->name('kamar.edit');
 Route::put('/kamar/{kamar}', [KamarController::class, 'update'])->name('kamar.update');
+Route::post('reservasi/{reservasi}/check-out', [ReservasiController::class, 'checkOut'])->name('reservasi.check-out');

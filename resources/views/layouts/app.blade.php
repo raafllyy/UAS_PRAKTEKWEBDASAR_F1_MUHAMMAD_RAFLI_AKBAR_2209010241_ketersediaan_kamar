@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RS Management - @yield('title', 'Home')</title>
+    <title>RS MRAFLY - @yield('title', 'Home')</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -95,7 +95,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                <i class="fas fa-hospital-alt me-2"></i>RS Management
+                <i class="fas fa-hospital-alt me-2"></i>RS MRAFLY
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -157,7 +157,7 @@
 
     <footer class="footer">
         <div class="container text-center">
-            <span>&copy; {{ date('Y') }} RS Management. All rights reserved.</span>
+            <span>&copy; {{ date('Y') }} RS MRAFLY. All rights reserved.</span>
         </div>
     </footer>
 

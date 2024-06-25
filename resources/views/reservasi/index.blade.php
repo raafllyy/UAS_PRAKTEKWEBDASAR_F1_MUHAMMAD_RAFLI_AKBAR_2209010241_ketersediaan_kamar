@@ -21,7 +21,7 @@
                 <td>{{ $r->kamar->nomor_kamar }}</td>
                 <td>{{ $r->pasien->nama }}</td>
                 <td>{{ $r->tanggal_masuk }}</td>
-                <td>{{ $r->tanggal_keluar ?? 'Belum keluar' }}</td>
+                <td>{{ $r->tanggal_keluar }}</td>
                 <td>{{ $r->status }}</td>
                 <td>
                     <a href="{{ route('reservasi.show', $r->id) }}" class="btn btn-sm btn-info">Detail</a>
@@ -31,6 +31,12 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus ini?')">Hapus</button>
                     </form>
+                    @if($r->status == 'aktif')
+                    <form action="{{ route('reservasi.check-out', $r->id) }}" method="POST" style="display: inline-block;">
+                        @csrf
+                        <button type="submit" class="btn btn-sm btn-success">Check-out</button>
+                    </form>
+                @endif
                 </td>
             </tr>
             @endforeach

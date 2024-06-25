@@ -31,10 +31,6 @@
             <input type="date" class="form-control" id="tanggal_masuk" name="tanggal_masuk" value="{{ $reservasi->tanggal_masuk }}" required>
         </div>
         <div class="form-group">
-            <label for="tanggal_keluar">Tanggal Keluar</label>
-            <input type="date" class="form-control" id="tanggal_keluar" name="tanggal_keluar" value="{{ $reservasi->tanggal_keluar }}">
-        </div>
-        <div class="form-group">
             <label for="status">Status</label>
             <select class="form-control" id="status" name="status" required>
                 <option value="aktif" {{ $reservasi->status == 'aktif' ? 'selected' : '' }}>Aktif</option>
